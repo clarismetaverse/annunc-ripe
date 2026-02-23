@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strip contiguo – mezzo A4</title>
+  <style>
+    :root {
+      --w: 210mm;
+      --h: 148mm;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f3f3f3;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .sheet {
+      width: min(var(--w), 100vw);
+      min-height: min(var(--h), 100vh);
+      margin: 20px auto;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      border-top: 2px dashed rgba(0, 0, 0, 0.35);
+      border-bottom: 2px dashed rgba(0, 0, 0, 0.35);
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .tab {
+      min-height: 148mm;
+      border-left: 1px dashed rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 12pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      padding: 3mm 0;
+      text-align: center;
+    }
+
+    .tab:first-child { border-left: none; }
+
+    .hint {
+      max-width: 80ch;
+      margin: 8px auto 18px;
+      text-align: center;
+      font-size: 10pt;
+      color: #666;
+    }
+
+    @media print {
+      body { background: white; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: var(--w);
+        min-height: var(--h);
+      }
+      .hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="sheet" aria-label="Strip con numeri strappabili contiguo all'annuncio principale">
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+    <div class="tab">+39 333 123 4567</div>
+  </section>
+
+  <p class="hint">Usa questo mezzo A4 come striscia separata da affiancare all'annuncio principale in bacheca.</p>
+</body>
+</html>

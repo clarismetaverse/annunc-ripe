@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ripetizioni – A4 con strappetti</title>
+  <style>
+    :root {
+      --page-w: 210mm;
+      --page-h: 297mm;
+      --ink: #111;
+      --muted: #555;
+      --hair: rgba(0, 0, 0, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f3f3f3;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .page {
+      width: min(var(--page-w), 100vw);
+      min-height: min(var(--page-h), 100vh);
+      margin: 18px auto;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .inner {
+      padding: 12mm 10mm 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6mm;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 18pt;
+      letter-spacing: 0.2px;
+    }
+
+    .sub {
+      margin: 3mm 0 0;
+      font-size: 10.8pt;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      align-items: start;
+    }
+
+    h3 {
+      margin: 0 0 3mm;
+      font-size: 10pt;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 10.8pt;
+      line-height: 1.35;
+    }
+
+    li { margin: 2px 0; }
+
+    .p {
+      margin: 0 0 3mm;
+      font-size: 10.8pt;
+      line-height: 1.4;
+    }
+
+    .box {
+      border-left: 4px solid var(--hair);
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 10px;
+      padding: 4mm 4.5mm;
+      font-size: 10.8pt;
+      line-height: 1.4;
+    }
+
+    .contact {
+      margin-top: 1mm;
+      font-size: 14.5pt;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .small {
+      font-size: 10pt;
+      color: var(--muted);
+      margin-top: 1mm;
+    }
+
+    .art {
+      width: 100%;
+      height: 92mm;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fafafa;
+    }
+
+    .art img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 9.8pt;
+      color: var(--muted);
+      margin-top: 2mm;
+    }
+
+    .tabs-wrap {
+      margin-top: 4mm;
+      border-top: 1px solid rgba(0, 0, 0, 0.16);
+      padding: 0 10mm 8mm;
+    }
+
+    .tabs-title {
+      font-size: 10pt;
+      color: var(--muted);
+      padding: 3mm 0 2mm;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .tab {
+      min-height: 42mm;
+      border-left: 1px dashed rgba(0, 0, 0, 0.32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8mm 0;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 10pt;
+      letter-spacing: 0.3px;
+      text-align: center;
+      user-select: none;
+    }
+
+    .tab:first-child { border-left: none; }
+
+    .print-hint {
+      text-align: center;
+      font-size: 9.6pt;
+      color: #666;
+      margin: 4mm auto 8mm;
+      max-width: 80ch;
+    }
+
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: var(--page-w);
+        min-height: var(--page-h);
+      }
+      .print-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page" role="document" aria-label="Annuncio ripetizioni formato A4 con strappetti">
+    <section class="inner">
+      <header>
+        <h1 class="title">📚 Ripetizioni di Inglese e supporto compiti</h1>
+        <p class="sub">Lezioni per medie e superiori, aiuto verifiche, recupero debiti e metodo di studio personalizzato. Zona scuola / online.</p>
+      </header>
+
+      <div class="row">
+        <section>
+          <h3>Per chi</h3>
+          <ul>
+            <li>Studenti scuola media e superiore</li>
+            <li>Preparazione interrogazioni e verifiche</li>
+            <li>Conversazione e pronuncia</li>
+            <li>Aiuto compiti e organizzazione studio</li>
+          </ul>
+
+          <h3 style="margin-top:5mm;">Info rapide</h3>
+          <p class="p">Prima call conoscitiva gratuita (10 minuti).</p>
+          <div class="box">
+            Disponibilità pomeriggio e sabato mattina.<br>
+            Lezioni singole o piccoli gruppi.
+            <p class="contact">📞 +39 333 123 4567</p>
+            <p class="small">(anche WhatsApp)</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="art" aria-label="Area immagine facoltativa">
+            <img src="vangogh.jpg" alt="Immagine del disegno o elaborato artistico" />
+          </div>
+          <p class="caption">Sostituisci <code>vangogh.jpg</code> con la tua immagine (opzionale).</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="tabs-wrap" aria-label="Numeri da strappare">
+      <div class="tabs-title">Strappa un numero 👇</div>
+      <div class="tabs">
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+        <div class="tab">+39 333 123 4567</div>
+      </div>
+    </section>
+  </article>
+
+  <p class="print-hint">Stampa consigliata: A4 verticale, scala 100%, margini minimi. Le linee tratteggiate aiutano lo strappo manuale.</p>
+</body>
+</html>
