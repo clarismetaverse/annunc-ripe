@@ -43,17 +43,30 @@
     }
 
     /* Header */
-    .title{
-      font-size: 22pt;
-      letter-spacing: .2px;
-      margin: 0;
+    .hero-title{
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 10px;
+      letter-spacing: -0.5px;
     }
 
-    .subtitle{
-      margin: 6px 0 0;
+    .hero-subtitle{
+      margin: 0;
       color: var(--muted);
-      font-size: 11.5pt;
-      line-height: 1.35;
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 900px;
+    }
+
+    .trust-badge{
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #f3f6ff;
+      font-weight: 600;
+      font-size: 14px;
     }
 
     .divider{
@@ -88,15 +101,19 @@
       font-size: 11.5pt;
     }
 
-    .subjects-list{
-      columns: 2;
-      column-gap: 10mm;
-      padding-left: 20px;
+    .subjects-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+      gap: 10px 24px;
+      margin-top: 12px;
     }
 
-    .subjects-list li{
-      break-inside: avoid;
-      page-break-inside: avoid;
+    .subject-item{
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .p{
@@ -203,9 +220,9 @@
     @media (max-width: 720px){
       .inner{ padding: 18px; gap: 18px; }
       .grid{ grid-template-columns: 1fr; }
-      .subjects-list{ columns: 1; }
+      .subjects-grid{ grid-template-columns: 1fr; }
       .art{ height: 52vh; }
-      .title{ font-size: 18pt; }
+      .hero-title{ font-size: 30px; }
     }
   </style>
 </head>
@@ -213,25 +230,26 @@
   <article class="page" role="document" aria-label="Locandina A3 per ripetizioni">
     <section class="inner">
       <header>
-        <h1 class="title">📚 Ripetizioni e metodo di studio – Scuole Medie</h1>
-        <p class="subtitle">Ex studente della Scuola Media Carlo Porta (sezione musicale) e del Liceo Classico Beccaria (sezione B), laureato in Filosofia (104/110) presso l’Università di Pisa e con percorso di Artificial Intelligence alla Utrecht University (interrotto per avvio di una startup), offre supporto allo studio e ripetizioni individuali per studenti delle scuole medie.</p>
+        <h1 class="hero-title">Ripetizioni e metodo di studio – Scuole Medie</h1>
+        <p class="hero-subtitle"><strong>Ex studente Carlo Porta e Liceo Beccaria</strong>, laureato in Filosofia (Università di Pisa) e con percorso in Artificial Intelligence (Utrecht University). Offro ripetizioni individuali e costruzione di un metodo di studio efficace.</p>
+        <div class="trust-badge">Metodo personalizzato • AI tools • Approccio rassicurante</div>
         <div class="divider" aria-hidden="true"></div>
       </header>
 
       <section class="grid">
         <div class="block">
           <h3>Materie</h3>
-          <ul class="list subjects-list">
-            <li>Inglese</li>
-            <li>Italiano</li>
-            <li>Storia</li>
-            <li>Storia dell’arte</li>
-            <li>Geografia</li>
-            <li>Matematica</li>
-            <li>Scienze</li>
-            <li>Disegno</li>
-            <li>Supporto alla tesina</li>
-          </ul>
+          <div class="subjects-grid">
+            <div class="subject-item">🇬🇧 Inglese</div>
+            <div class="subject-item">📚 Italiano</div>
+            <div class="subject-item">🏛️ Storia</div>
+            <div class="subject-item">🎨 Storia dell’arte</div>
+            <div class="subject-item">🌍 Geografia</div>
+            <div class="subject-item">📐 Matematica</div>
+            <div class="subject-item">🔬 Scienze</div>
+            <div class="subject-item">✏️ Disegno</div>
+            <div class="subject-item">🧠 Supporto alla tesina</div>
+          </div>
 
           <h3 style="margin-top:8mm;">Approccio</h3>
           <p class="p">Le lezioni aiutano nella preparazione di compiti, verifiche ed esame finale, ma soprattutto nello sviluppo di un metodo di studio efficace e personalizzato.</p>
