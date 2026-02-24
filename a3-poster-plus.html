@@ -138,7 +138,8 @@
       width: 100%;
       height: 100%;
       object-fit: contain;  /* IMPORTANT: scales without cropping */
-      object-position: center;
+      object-position: center top;
+      filter: brightness(1.18) contrast(1.04);
       display: block;
     }
 
@@ -154,6 +155,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 10mm;
+      flex-wrap: wrap;
       margin-top: 2mm;
       padding-top: 8mm;
       border-top: 1px solid var(--hair);
@@ -162,6 +164,23 @@
     }
 
     .footer strong{ color: var(--ink); font-weight: 600; }
+
+    .qr{
+      display: inline-flex;
+      align-items: center;
+      gap: 4mm;
+      color: var(--ink);
+    }
+
+    .qr img{
+      width: 22mm;
+      height: 22mm;
+      object-fit: contain;
+      border: 1px solid var(--hair);
+      border-radius: 4px;
+      background: #fff;
+      padding: 1.5mm;
+    }
 
     /* PRINT SETTINGS */
     @page{
@@ -234,7 +253,10 @@
 
       <footer class="footer">
         <span><strong>Contatti:</strong> 📞 +39 333 123 4567</span>
-        <span><strong>Prima lezione conoscitiva:</strong> per comprendere stile di apprendimento e obiettivi</span>
+        <span class="qr">
+          <img src="https://raw.githubusercontent.com/clarismetaverse/annunc-ripe/main/QR.png" alt="QR code contatto" />
+          <span><strong>Scansiona QR:</strong> accesso rapido ai contatti</span>
+        </span>
       </footer>
     </section>
   </article>
