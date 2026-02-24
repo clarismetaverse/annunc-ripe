@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ripetizioni – Scuole Medie</title>
+  <style>
+    :root{
+      --page-w: 297mm; /* A3 portrait */
+      --page-h: 420mm;
+      --ink: #111;
+      --muted: #555;
+      --hair: rgba(0,0,0,.12);
+      --card: #fff;
+      --bg: #f6f6f6;
+    }
+
+    /* Screen background */
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.25;
+    }
+
+    /* A3 page container (screen preview) */
+    .page{
+      width: min(var(--page-w), 100vw);
+      min-height: min(var(--page-h), 100vh);
+      margin: 24px auto;
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .inner{
+      padding: 20mm 18mm 18mm;
+      display: flex;
+      flex-direction: column;
+      gap: 14mm;
+    }
+
+    /* Header */
+    .title{
+      font-size: 22pt;
+      letter-spacing: .2px;
+      margin: 0;
+    }
+
+    .subtitle{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 11.5pt;
+      line-height: 1.35;
+    }
+
+    .divider{
+      height: 1px;
+      background: var(--hair);
+      margin-top: 10mm;
+    }
+
+    /* Two-column section for quick scan */
+    .grid{
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 10mm;
+      align-items: start;
+    }
+
+    .block h3{
+      margin: 0 0 6mm;
+      font-size: 12pt;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+    }
+    .list li{
+      margin: 4px 0;
+      font-size: 11.5pt;
+    }
+
+    .p{
+      margin: 0 0 6mm;
+      font-size: 11.5pt;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .highlight{
+      border-left: 4px solid rgba(0,0,0,.18);
+      padding: 5mm 6mm;
+      background: rgba(0,0,0,.03);
+      border-radius: 10px;
+      font-size: 11.5pt;
+      line-height: 1.45;
+    }
+
+    .pillrow{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 3mm;
+    }
+    .pill{
+      border: 1px solid var(--hair);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 10.5pt;
+      color: #222;
+      background: #fff;
+      white-space: nowrap;
+    }
+
+    /* Artwork area */
+    .art-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+      margin-top: 2mm;
+    }
+
+    .art{
+      width: 100%;
+      height: 210mm; /* adjust: how much space the drawing occupies */
+      border: 1px solid var(--hair);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fafafa;
+      display: grid;
+      place-items: center;
+    }
+
+    .art img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;  /* IMPORTANT: scales without cropping */
+      object-position: center;
+      display: block;
+    }
+
+    .caption{
+      font-size: 10.5pt;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Footer contact placeholder */
+    .footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10mm;
+      margin-top: 2mm;
+      padding-top: 8mm;
+      border-top: 1px solid var(--hair);
+      color: var(--muted);
+      font-size: 10.5pt;
+    }
+
+    .footer strong{ color: var(--ink); font-weight: 600; }
+
+    /* PRINT SETTINGS */
+    @page{
+      size: A3 portrait;
+      margin: 0;
+    }
+    @media print{
+      body{ background: #fff; }
+      .page{
+        width: var(--page-w);
+        min-height: var(--page-h);
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .inner{ padding: 18mm 16mm 16mm; }
+    }
+
+    /* Mobile friendly: stack grid */
+    @media (max-width: 720px){
+      .inner{ padding: 18px; gap: 18px; }
+      .grid{ grid-template-columns: 1fr; }
+      .art{ height: 52vh; }
+      .title{ font-size: 18pt; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page" role="document" aria-label="Locandina A3 per ripetizioni">
+    <section class="inner">
+      <header>
+        <h1 class="title">📚 Ripetizioni – Scuole Medie</h1>
+        <p class="subtitle">Supporto compiti, recupero lacune e preparazione verifiche con percorso personalizzato. Lezioni in presenza (zona scuola) o online.</p>
+        <div class="divider" aria-hidden="true"></div>
+      </header>
+
+      <section class="grid">
+        <div class="block">
+          <h3>Cosa offro</h3>
+          <ul class="list">
+            <li>Aiuto compiti e metodo di studio</li>
+            <li>Preparazione verifiche e interrogazioni</li>
+            <li>Recupero matematica, inglese e materie umanistiche</li>
+            <li>Spiegazioni chiare, esercizi guidati e schemi</li>
+          </ul>
+
+          <h3 style="margin-top:8mm;">Info utili</h3>
+          <p class="p">Prima call conoscitiva gratuita (10 minuti). Disponibilità pomeriggio e sabato mattina.</p>
+          <div class="highlight">
+            Lezioni individuali o in mini-gruppo (max 3 studenti). Possibilità pacchetti mensili.
+            <div class="pillrow" aria-label="Caratteristiche lezioni">
+              <span class="pill">In presenza</span>
+              <span class="pill">Online</span>
+              <span class="pill">Anche WhatsApp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-wrap">
+          <div class="art" aria-label="Area immagine facoltativa">
+            <img src="vangogh.jpg" alt="Immagine del disegno o elaborato artistico" />
+          </div>
+          <p class="caption">Sostituisci <code>vangogh.jpg</code> con una tua immagine (opzionale).</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span><strong>Contatti:</strong> 📞 +39 333 123 4567</span>
+        <span><strong>Disponibilità:</strong> dal lunedì al sabato</span>
+      </footer>
+    </section>
+  </article>
+</body>
+</html>

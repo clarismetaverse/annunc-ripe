@@ -1,0 +1,8 @@
+Template pronti per stampa annunci in bacheca:
+
+- `index.html`: pagina iniziale per GitHub Pages con i link ai template disponibili.
+- `a4-tearoff.html`: annuncio completo in A4 con 12 numeri strappabili integrati.
+- `strip-contiguo.html`: variante mezzo A4 solo strappetti da affiancare in modo contiguo.
+- `a3-poster.html`: terza versione in A3 verticale con layout a due colonne e area immagine ampia.
+
+Sostituisci il numero `+39 333 123 4567` con il tuo e, se vuoi, cambia `vangogh.jpg` con la tua immagine.
