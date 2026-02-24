@@ -88,6 +88,17 @@
       font-size: 11.5pt;
     }
 
+    .subjects-list{
+      columns: 2;
+      column-gap: 10mm;
+      padding-left: 20px;
+    }
+
+    .subjects-list li{
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
     .p{
       margin: 0 0 6mm;
       font-size: 11.5pt;
@@ -102,22 +113,6 @@
       border-radius: 10px;
       font-size: 11.5pt;
       line-height: 1.45;
-    }
-
-    .pillrow{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 3mm;
-    }
-    .pill{
-      border: 1px solid var(--hair);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 10.5pt;
-      color: #222;
-      background: #fff;
-      white-space: nowrap;
     }
 
     /* Artwork area */
@@ -189,6 +184,7 @@
     @media (max-width: 720px){
       .inner{ padding: 18px; gap: 18px; }
       .grid{ grid-template-columns: 1fr; }
+      .subjects-list{ columns: 1; }
       .art{ height: 52vh; }
       .title{ font-size: 18pt; }
     }
@@ -206,7 +202,7 @@
       <section class="grid">
         <div class="block">
           <h3>Materie</h3>
-          <ul class="list">
+          <ul class="list subjects-list">
             <li>Inglese</li>
             <li>Italiano</li>
             <li>Storia</li>
@@ -225,11 +221,6 @@
             Obiettivo: aiutare lo studente a diventare autonomo e proattivo nello studio, costruendo competenze utili negli anni successivi, dal liceo fino all’università.
             <br /><br />
             Non solo ripetizioni: costruiremo insieme un metodo di studio che lo studente potrà usare in autonomia anche negli anni successivi.
-            <div class="pillrow" aria-label="Caratteristiche lezioni">
-              <span class="pill">Triathlon</span>
-              <span class="pill">Laboratorio di scacchi (Scuola Media Carlo Porta)</span>
-              <span class="pill">Atletica leggera</span>
-            </div>
           </div>
         </div>
 
